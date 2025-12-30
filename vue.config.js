@@ -5,6 +5,15 @@ function resolve(dir) {
 }
 
 module.exports = {
+  publicPath: process.env.BASE_URL,
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true
+      }
+    }
+  },
+
   chainWebpack: config => {
     // set svg-sprite-loader
     config.module
@@ -22,5 +31,21 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
-  }
+  },
+
+  configureWebpack: {
+    performance: {
+      hints: false
+    },
+    plugins: [
+      new (require('compression-webpack-plugin'))({
+        filename: '[path][base].gz',
+        algorithm: 'gzip',
+        test: /\.(js|css|html|svg)$/,
+        threshold: 10240,
+        minRatio: 0.8
+      })
+    ]
+  },
+  productionSourceMap: false
 };

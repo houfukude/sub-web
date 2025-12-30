@@ -56,7 +56,8 @@
                     <div slot="suffix" style="width: 10px;">:</div>
                   </el-input>
                   <el-input v-model="param.value" placeholder="自定义参数内容">
-                      <el-button slot="suffix" type="text" icon="el-icon-delete" style="margin-right: 5px" @click="customParams.splice(i, 1)"/>
+                    <el-button slot="suffix" type="text" icon="el-icon-delete" style="margin-right: 5px"
+                      @click="customParams.splice(i, 1)" />
                   </el-input>
                 </el-form-item>
 
@@ -132,49 +133,29 @@
 
               <!-- 操作按钮组 -->
               <el-form-item label-width="0px" style="margin-top: 40px; text-align: center">
-                <el-button
-                  :style="buttonStyle"
-                  type="danger"
-                  @click="makeUrlClick"
-                  :disabled="!canGenerateUrl">
+                <el-button :style="buttonStyle" type="danger" @click="makeUrlClick" :disabled="!canGenerateUrl">
                   生成订阅链接
                 </el-button>
-                <el-button
-                  :style="buttonStyle"
-                  type="danger"
-                  @click="makeShortUrlClick"
-                  :loading="loading"
+                <!-- <el-button :style="buttonStyle" type="danger" @click="makeShortUrlClick" :loading="loading"
                   :disabled="!canGenerateShortUrl">
                   生成短链接
-                </el-button>
+                </el-button> -->
               </el-form-item>
 
               <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                  :style="buttonStyle"
-                  type="primary"
-                  @click="dialogUploadConfigVisible = true"
-                  icon="el-icon-upload"
-                  :loading="loading">
+                <!-- <el-button :style="buttonStyle" type="primary" @click="dialogUploadConfigVisible = true"
+                  icon="el-icon-upload" :loading="loading">
                   上传配置
-                </el-button>
-                <el-button
-                  :style="buttonStyle"
-                  type="primary"
-                  @click="clashInstall"
-                  icon="el-icon-connection"
+                </el-button> -->
+                <el-button :style="buttonStyle" type="primary" @click="clashInstall" icon="el-icon-connection"
                   :disabled="!canImportClash">
                   一键导入 Clash
                 </el-button>
               </el-form-item>
 
               <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                  :style="{ width: '290px' }"
-                  type="primary"
-                  @click="dialogLoadConfigVisible = true"
-                  icon="el-icon-copy-document"
-                  :loading="loading">
+                <el-button :style="{ width: '290px' }" type="primary" @click="dialogLoadConfigVisible = true"
+                  icon="el-icon-copy-document" :loading="loading">
                   从 URL 解析
                 </el-button>
               </el-form-item>
@@ -185,22 +166,12 @@
     </el-row>
 
     <!-- 配置上传对话框 -->
-    <ConfigUploadDialog
-      :visible="dialogUploadConfigVisible"
-      :upload-config="uploadConfig"
-      :loading="loading"
-      @cancel="handleUploadCancel"
-      @confirm="handleConfigUpload"
-    />
+    <ConfigUploadDialog :visible="dialogUploadConfigVisible" :upload-config="uploadConfig" :loading="loading"
+      @cancel="handleUploadCancel" @confirm="handleConfigUpload" />
 
     <!-- URL解析对话框 -->
-    <UrlParseDialog
-      :visible="dialogLoadConfigVisible"
-      :load-config="loadConfig"
-      :loading="loading"
-      @cancel="handleLoadCancel"
-      @confirm="handleUrlParse"
-    />
+    <UrlParseDialog :visible="dialogLoadConfigVisible" :load-config="loadConfig" :loading="loading"
+      @cancel="handleLoadCancel" @confirm="handleUrlParse" />
   </div>
 </template>
 
@@ -240,7 +211,7 @@ export default {
       // 配置选项
       options: {
         clientTypes: CLIENT_TYPES,
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [{ value: CONSTANTS.DEFAULT_BACKEND }],
         remoteConfig: REMOTE_CONFIGS
       },
 
@@ -284,11 +255,11 @@ export default {
     },
 
     currentBackend() {
-      return this.form.customBackend || CONSTANTS.DEFAULT_BACKEND;
+      return this.form.customBackend;
     }
   },
   created() {
-    document.title = "Subscription Converter";
+    this.form.customBackend = CONSTANTS.DEFAULT_BACKEND;
     this.isPC = this.$getOS().isPc;
 
     // 获取 url cache

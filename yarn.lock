@@ -2533,6 +2533,14 @@ compressible@~2.0.18:
   dependencies:
     mime-db ">= 1.43.0 < 2"
 
+compression-webpack-plugin@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-10.0.0.tgz#3496af1b0dc792e13efc474498838dbff915c823"
+  integrity sha512-wLXLIBwpul/ALcm7Aj+69X0pYT3BYt6DdPn3qrgBIh9YejV9Bju9ShhlAsjujLyWMo6SAweFIWaUoFmXZNuNrg==
+  dependencies:
+    schema-utils "^4.0.0"
+    serialize-javascript "^6.0.0"
+
 compression@^1.7.4:
   version "1.8.1"
   resolved "https://registry.npmmirror.com/compression/-/compression-1.8.1.tgz#4a45d909ac16509195a9a28bd91094889c180d79"
@@ -3083,7 +3091,12 @@ electron-to-chromium@^1.5.263:
   resolved "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.5.266.tgz#41ed029b3cf641c4ee071de42954b36dca8f5f4e"
   integrity sha512-kgWEglXvkEfMH7rxP5OSZZwnaDWT7J9EoZCujhnpLbfi0bbNtRkgdX2E3gt0Uer11c61qCYktB3hwkAS325sJg==
 
-element-ui@^2.15.1:
+element-theme-darkplus@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/element-theme-darkplus/-/element-theme-darkplus-2.1.4.tgz#a6651e31c0447d93d5b3af5a17483cf0ca7a40b7"
+  integrity sha512-THT7qc2gliNZngwUNl5Op1sGVE7WLDhIAieeqnt317XfI/K7+gkqGEVqysfaPtBqUkRvVLPJTB4MAfk6z/Ldjg==
+
+element-ui@^2.15.14:
   version "2.15.14"
   resolved "https://registry.npmmirror.com/element-ui/-/element-ui-2.15.14.tgz#3c34df79467636592812d720d2e6784e7a6ec2ea"
   integrity sha512-2v9fHL0ZGINotOlRIAJD5YuVB8V7WKxrE9Qy7dXhRipa035+kF7WuU/z+tEmLVPBcJ0zt8mOu1DKpWcVzBK8IA==

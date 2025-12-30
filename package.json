@@ -13,7 +13,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.12.1",
-    "element-ui": "^2.15.1",
+    "element-theme-darkplus": "^2.1.4",
+    "element-ui": "^2.15.14",
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.1",
     "vue-router": "^3.5.1"
@@ -26,6 +27,7 @@
     "@vue/cli-plugin-router": "5",
     "@vue/cli-service": "5",
     "babel-plugin-component": "^1.1.1",
+    "compression-webpack-plugin": "^10.0.0",
     "eslint": "8.56.0",
     "eslint-plugin-vue": "9.17.0",
     "svg-sprite-loader": "6.0.11",

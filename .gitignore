@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
 /dist
+/dist.zip
+/dist.tar.gz
+/dist.7z
 
 # local env files
 .env.local
@@ -19,3 +22,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# publish scripts
+/publish.sh
+/publish-*.sh

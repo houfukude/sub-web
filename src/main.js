@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import 'element-theme-darkplus/lib/index.css';
 import App from './App.vue'
 import router from './router'
 require(`@/plugins/element-ui`)
